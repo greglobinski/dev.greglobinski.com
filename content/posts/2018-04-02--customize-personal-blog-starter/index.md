@@ -1,11 +1,11 @@
 ---
-title: How to customize the personalBlog starter's appearance
+title: How to customize the PersonalBlog starter's appearance
 relatesTo: ['gatsby-starter-personal-blog']
 category: instructions
 cover: cover.png
 ---
 
-The [starter](/gatsby-starter-personal-blog/) uses a theme object so a base customization is pretty easy.
+The [starter](/gatsby-starter-personal-blog/) uses a theme object so base customization is pretty easy.
 
 Find the `theme.js` file.
 
