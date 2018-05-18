@@ -62,14 +62,8 @@ const Bodytext = props => {
 
           :global(a):not(.ant-btn) {
             font-weight: ${theme.font.weight.bold};
-            text-shadow: -2px 2px ${theme.color.neutral.white},
-              -2px -2px ${theme.color.neutral.white}, -2px 2px ${theme.color.neutral.white},
-              -2px 0 ${theme.color.neutral.white}, 2px 2px ${theme.color.neutral.white},
-              2px 0 ${theme.color.neutral.white};
-            display: inline-block;
-            line-height: 0.9;
             color: ${theme.color.brand.primary};
-            border-bottom: 1px solid ${theme.color.brand.primary};
+            text-decoration: underline;
           }
 
           :global(a.gatsby-resp-image-link) {
