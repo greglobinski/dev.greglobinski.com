@@ -226,7 +226,7 @@ keyTwo: *anchor_name
 
 Thanks to `&anchor_name` the value of `keyOne` can be reasign to another key. Every time you change value of `keyOne`, the value of `keyTwo` will be updated automaticaly.
 
-Take a look at the HeroBlog starter's [theme](/customize-hero-blog-starter/) and notice how it anchors to assign values of options to tokens.
+Take a look at the HeroBlog starter's [theme](/customize-hero-blog-starter/) and notice how it uses anchors to assign values of the options to the tokens.
 
 ## Summary
 
