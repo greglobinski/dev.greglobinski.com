@@ -10,6 +10,7 @@ import Comments from "./Comments";
 import NextPrev from "./NextPrev";
 import RepoDetails from "./RepoDetails";
 import RepoDescription from "./RepoDescription";
+import Editor from "../Article/Editor";
 
 const Share = asyncComponent(() =>
   import("./Share")
@@ -24,6 +25,7 @@ const Post = props => {
     post,
     post: {
       html,
+      fileAbsolutePath,
       fields: { prefix, slug },
       frontmatter: { title, category }
     },
@@ -34,6 +36,8 @@ const Post = props => {
     theme,
     repo
   } = props;
+
+  console.log(fileAbsolutePath);
 
   return (
     <React.Fragment>
@@ -47,6 +51,7 @@ const Post = props => {
       <footer>
         <Share post={post} theme={theme} />
         <Author note={authornote} theme={theme} />
+        <Editor path={fileAbsolutePath} theme={theme} />
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />
         <Comments slug={slug} facebook={facebook} theme={theme} />
       </footer>

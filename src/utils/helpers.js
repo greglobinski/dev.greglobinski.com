@@ -25,3 +25,10 @@ export function timeoutThrottlerHandler(timeouts, name, delay, handler) {
 export function chunkString(str, length) {
   return str.match(new RegExp("(.|[\r\n]){1," + length + "}", "g"));
 }
+
+export function localToGithubUrl(path) {
+  return path.replace(
+    /^C:.*dev.greglobinski.com/,
+    `https://github.com/greglobinski/dev.greglobinski.com/blob/master`
+  );
+}

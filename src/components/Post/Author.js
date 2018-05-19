@@ -19,10 +19,9 @@ const Author = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .author {
-          margin: ${theme.space.l} 0;
+          margin: ${theme.space.l} 0 -${theme.space.l};
           padding: ${theme.space.l} 0;
           border-top: 1px solid ${theme.line.color};
-          border-bottom: 1px solid ${theme.line.color};
         }
         .avatar {
           float: left;

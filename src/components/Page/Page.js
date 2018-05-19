@@ -1,13 +1,15 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
-import Headline from "../Article/Headline";
 import Bodytext from "../Article/Bodytext";
+import Headline from "../Article/Headline";
+import Editor from "../Article/Editor";
 
 const Page = props => {
   const {
     page: {
       html,
+      fileAbsolutePath,
       frontmatter: { title }
     },
     theme
@@ -19,6 +21,9 @@ const Page = props => {
         <Headline title={title} theme={theme} />
       </header>
       <Bodytext html={html} theme={theme} />
+      <footer>
+        <Editor path={fileAbsolutePath} theme={theme} />
+      </footer>
     </React.Fragment>
   );
 };
