@@ -1,6 +1,6 @@
 ---
 title: SimpleLanding - a GatsbyJS starter
-category: starters
+category: starter
 cover: gatsby-starter-simple-landing.png
 ---
 

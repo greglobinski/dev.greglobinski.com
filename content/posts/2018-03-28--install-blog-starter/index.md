@@ -1,7 +1,7 @@
 ---
 title: How to install, setup and add new content to a Blog starter
 relatesTo: ['gatsby-starter-personal-blog', 'gatsby-starter-hero-blog']
-category: instructions
+category: instruction
 cover: cover.png
 ---
 

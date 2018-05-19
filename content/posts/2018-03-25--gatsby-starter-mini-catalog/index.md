@@ -1,6 +1,6 @@
 ---
 title: MiniCatalog - a GatsbyJS starter
-category: starters
+category: starter
 cover: gatsby-starter-mini-catalog.png
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: PersonalBlog - a GatsbyJS starter
-category: starters
+category: starter
 cover: gatsby-starter-personal-blog.png
 ---
 

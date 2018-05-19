@@ -1,7 +1,7 @@
 ---
 title: What is YAML and how to use it
 relatesTo: ['gatsby-starter-hero-blog']
-category: tutorials
+category: textbook
 cover: what-is-yaml.png
 ---
 

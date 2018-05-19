@@ -1,7 +1,7 @@
 ---
 title: How to customize the PersonalBlog starter's appearance
 relatesTo: ['gatsby-starter-personal-blog']
-category: instructions
+category: instruction
 cover: cover.png
 ---
 

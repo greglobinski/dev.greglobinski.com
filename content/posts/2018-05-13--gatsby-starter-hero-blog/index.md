@@ -1,6 +1,6 @@
 ---
 title: HeroBlog - a GatsbyJS starter
-category: starters
+category: starter
 cover: gatsby-starter-hero-blog.png
 ---
 

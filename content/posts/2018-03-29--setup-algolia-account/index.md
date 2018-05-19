@@ -1,7 +1,7 @@
 ---
 title: Setup Algolia account for your GatsbyJS blog
 relatesTo: ['gatsby-starter-personal-blog']
-category: instructions
+category: instruction
 cover: algolia-sign-up.png
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: How to customize the HeroBlog starter's appearance
 relatesTo: ['gatsby-starter-hero-blog']
-category: instructions
+category: instruction
 cover: customize-hero-blog-starter.png
 ---
 
