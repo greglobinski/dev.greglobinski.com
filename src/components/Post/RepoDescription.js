@@ -2,7 +2,7 @@ import FaChain from "react-icons/lib/fa/chain";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Bodytext from "../Main/Bodytext";
+import Bodytext from "../Article/Bodytext";
 
 const RepoDescription = props => {
   const {

@@ -10,7 +10,7 @@ import ReactMarkdown from "react-markdown";
 
 import buttonStyle from "antd/lib/button/style/index.css";
 
-import Bodytext from "../Main/Bodytext";
+import Bodytext from "../Article/Bodytext";
 import CodeBlock from "./CodeBlock";
 
 const RepoDetails = props => {

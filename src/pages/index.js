@@ -1,7 +1,6 @@
 import Loadable from "react-loadable";
 import PropTypes from "prop-types";
 import React from "react";
-//import { chunkString } from "../utils/helpers";
 
 import { ThemeContext, ScreenWidthContext } from "../layouts";
 import Hero from "../components/Hero";
@@ -59,40 +58,6 @@ class IndexPage extends React.Component {
       mobileWebp
     };
 
-    // const algolia = this.props.data.algolia;
-    // const objects = algolia.edges.map(({ node }) => {
-    //   const {
-    //     objectID,
-    //     fields: { slug },
-    //     frontmatter: { title },
-    //     internal: { content }
-    //   } = node;
-    //   return { objectID, title, slug, content };
-    // });
-    // const chunks = algolia.edges.reduce((chunksTotal, { node }) => {
-    //   const {
-    //     objectID,
-    //     fields: { slug },
-    //     frontmatter: { title },
-    //     internal: { content }
-    //   } = node;
-
-    //   const contentChunks = chunkString(content, 5000);
-    //   const record = { objectID, title, slug, content };
-    //   const recordChunks = contentChunks.reduce((recordChunksTotal, contentChunksItem, idx) => {
-    //     return [
-    //       ...recordChunksTotal,
-    //       { ...record, ...{ objectID: `${objectID}/${idx}`, content: contentChunksItem } }
-    //     ];
-    //   }, []);
-
-    //   return [...chunksTotal, ...recordChunks];
-    // }, []);
-
-    //console.log(algolia);
-    //console.log("objects", objects);
-    //console.log("chunks", chunks);
-
     return (
       <React.Fragment>
         <ScreenWidthContext.Consumer>
@@ -118,6 +83,7 @@ class IndexPage extends React.Component {
 
         <Seo facebook={facebook} />
 
+        {/* --- STYLES --- */}
         <style jsx>{`
           hr {
             margin: 0;
