@@ -27,8 +27,10 @@ export function chunkString(str, length) {
 }
 
 export function localToGithubUrl(path) {
-  return path.replace(
-    /^C:.*dev.greglobinski.com/,
-    `https://github.com/greglobinski/dev.greglobinski.com/blob/master`
+  var newPath = path.replace(
+    /(^.+)(\/content\/)/,
+    `https://github.com/greglobinski/dev.greglobinski.com/blob/master$2`
   );
+
+  return newPath;
 }

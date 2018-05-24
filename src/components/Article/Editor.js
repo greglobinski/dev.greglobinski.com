@@ -10,9 +10,13 @@ const Editor = props => {
   return (
     <React.Fragment>
       <div className="editor">
-        <FaInfoCircle /> You should know that English is not my native language. So please be understanding if you
-        find any mistake or unclear meaning in my wrtiting. If you want, You can suggest corrections
-        by <a href={localToGithubUrl(path)} target="_blank">editing this file</a> on GitHub.
+        <FaInfoCircle /> You should know that English is not my native language. So please be
+        understanding if you find any mistake or unclear meaning in my wrtiting. If you want, You
+        can suggest corrections by{" "}
+        <a href={localToGithubUrl(path)} target="_blank">
+          editing this file
+        </a>{" "}
+        on GitHub.
       </div>
 
       {/* --- STYLES --- */}

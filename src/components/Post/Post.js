@@ -37,8 +37,6 @@ const Post = props => {
     repo
   } = props;
 
-  console.log(fileAbsolutePath);
-
   return (
     <React.Fragment>
       <header>
