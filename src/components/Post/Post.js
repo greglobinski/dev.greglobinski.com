@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Loadable from "react-loadable";
 
-import asyncComponent from "../AsyncComponent";
 import Headline from "../Article/Headline";
 import Bodytext from "../Article/Bodytext";
 import Meta from "./Meta";
@@ -11,14 +11,14 @@ import NextPrev from "./NextPrev";
 import RepoDetails from "./RepoDetails";
 import RepoDescription from "./RepoDescription";
 import Editor from "../Article/Editor";
+import Loading from "../Loading";
 
-const Share = asyncComponent(() =>
-  import("./Share")
-    .then(module => {
-      return module;
-    })
-    .catch(error => {})
-);
+const LoadableShare = Loadable({
+  loader: () => import("./Share"),
+  loading() {
+    return <Loading />;
+  }
+});
 
 const Post = props => {
   const {
@@ -47,7 +47,7 @@ const Post = props => {
       <Bodytext html={html} theme={theme} />
       {repo && <RepoDetails theme={theme} repo={repo} />}
       <footer>
-        <Share post={post} theme={theme} />
+        <LoadableShare post={post} theme={theme} />
         <Author note={authornote} theme={theme} />
         <Editor path={fileAbsolutePath} theme={theme} />
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />

@@ -5,11 +5,12 @@ import React from "react";
 import { ThemeContext, ScreenWidthContext } from "../layouts";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
+import Loading from "../components/Loading";
 
 const LoadableBlog = Loadable({
   loader: () => import("../components/Blog"),
   loading() {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 });
 
