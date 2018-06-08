@@ -5,7 +5,6 @@
   "dependencies": {
     "antd": "^3.5.1",
     "chunk-text": "^1.0.5",
-    "fontfaceobserver": "^2.0.13",
     "gatsby": "^1.9.260",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.44",
@@ -55,7 +54,9 @@
     "typeface-roboto": "^0.0.54",
     "yaml-loader": "^0.5.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

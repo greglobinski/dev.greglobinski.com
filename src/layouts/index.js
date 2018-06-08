@@ -1,5 +1,4 @@
 import "typeface-fira-sans";
-import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -10,7 +9,6 @@ import Header from "../components/Header";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
-export const FontLoadedContext = React.createContext(false);
 
 import themeObjectFromYaml from "../theme/theme.yaml";
 
@@ -19,17 +17,10 @@ class Layout extends React.Component {
     super();
 
     this.state = {
-      font400loaded: false,
-      font500loaded: false,
       screenWidth: 0,
       headerMinimized: false,
       theme: themeObjectFromYaml
     };
-
-    if (typeof window !== `undefined`) {
-      this.loadFont("font400", "Fira Sans", 400);
-      this.loadFont("font500", "Fira Sans", 500);
-    }
   }
 
   timeouts = {};
@@ -59,22 +50,6 @@ class Layout extends React.Component {
     return false;
   };
 
-  loadFont = (name, family, weight) => {
-    const font = new FontFaceObserver(family, {
-      weight: weight
-    });
-
-    font.load(null, 10000).then(
-      () => {
-        console.log(`${name} is available`);
-        this.setState({ [`${name}loaded`]: true });
-      },
-      () => {
-        console.log(`${name} is not available`);
-      }
-    );
-  };
-
   render() {
     const { children, data } = this.props;
     const {
@@ -84,64 +59,60 @@ class Layout extends React.Component {
 
     return (
       <ThemeContext.Provider value={this.state.theme}>
-        <FontLoadedContext.Provider value={this.state.font400loaded}>
-          <ScreenWidthContext.Provider value={this.state.screenWidth}>
-            <React.Fragment>
-              <Header path={this.props.location.pathname} pages={pages} theme={this.state.theme} />
-              <main>{children()}</main>
-              <Footer html={footnoteHTML} theme={this.state.theme} />
+        <ScreenWidthContext.Provider value={this.state.screenWidth}>
+          <React.Fragment>
+            <Header path={this.props.location.pathname} pages={pages} theme={this.state.theme} />
+            <main>{children()}</main>
+            <Footer html={footnoteHTML} theme={this.state.theme} />
 
-              {/* --- STYLES --- */}
-              <style jsx>{`
-                main {
-                  min-height: 80vh;
-                }
-              `}</style>
-              <style jsx global>{`
-                html {
-                  box-sizing: border-box;
-                }
-                *,
-                *:after,
-                *:before {
-                  box-sizing: inherit;
-                  margin: 0;
-                  padding: 0;
-                }
-                body {
-                  font-family: ${this.state.font400loaded
-                    ? "Fira Sans, sans-serif;"
-                    : "Arial, sans-serif;"};
-                }
-                h1,
-                h2,
-                h3 {
-                  font-weight: ${this.state.font500loaded ? 500 : 400};
-                  line-height: 1.1;
-                  letter-spacing: -0.01em;
-                  margin: 0;
-                }
-                h1 {
-                  letter-spacing: -0.02em;
-                }
-                p {
-                  margin: 0;
-                }
-                strong {
-                  font-weight: ${this.state.font500loaded ? 500 : 400};
-                }
-                a {
-                  text-decoration: none;
-                  color: #666;
-                }
-                main {
-                  width: auto;
-                  display: block;
-                }
-              `}</style>
-            </React.Fragment>
-          </ScreenWidthContext.Provider>
-        </FontLoadedContext.Provider>
+            {/* --- STYLES --- */}
+            <style jsx>{`
+              main {
+                min-height: 80vh;
+              }
+            `}</style>
+            <style jsx global>{`
+              html {
+                box-sizing: border-box;
+              }
+              *,
+              *:after,
+              *:before {
+                box-sizing: inherit;
+                margin: 0;
+                padding: 0;
+              }
+              body {
+                font-family: "Fira Sans", Arial, sans-serif;
+              }
+              h1,
+              h2,
+              h3 {
+                font-weight: 500;
+                line-height: 1.1;
+                letter-spacing: -0.01em;
+                margin: 0;
+              }
+              h1 {
+                letter-spacing: -0.02em;
+              }
+              p {
+                margin: 0;
+              }
+              strong {
+                font-weight: 500;
+              }
+              a {
+                text-decoration: none;
+                color: #666;
+              }
+              main {
+                width: auto;
+                display: block;
+              }
+            `}</style>
+          </React.Fragment>
+        </ScreenWidthContext.Provider>
       </ThemeContext.Provider>
     );
   }
