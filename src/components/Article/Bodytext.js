@@ -83,7 +83,8 @@ const Bodytext = props => {
             }
           }
 
-          :global(p > code) {
+          :global(p > code),
+          :global(li > code) {
             background: ${theme.color.neutral.gray.c};
             text-shadow: none;
             color: inherit;
