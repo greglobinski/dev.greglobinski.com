@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.5.1",
     "chunk-text": "^1.0.5",
+    "common-last-names": "^1.1.3",
     "gatsby": "^1.9.260",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.44",
@@ -23,6 +24,7 @@
     "gatsby-plugin-styled-jsx-postcss": "^1.0.4",
     "gatsby-plugin-twitter": "^1.0.20",
     "gatsby-remark-copy-linked-files": "^1.5.31",
+    "gatsby-remark-emojis": "^0.2.3",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^1.5.63",
     "gatsby-remark-prismjs": "^2.0.1",

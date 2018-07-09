@@ -1,14 +1,20 @@
 module.exports = function(chunksTotal, { node }) {
   const {
+    objectID,
     fields: { slug },
     frontmatter: { title },
     internal: { content }
   } = node;
 
-  const contentChunks = chunkString(content, 5000);
+  const noEmojiContent = content.replace(/<img class="emoji-icon".+\/>/g, "");
+
+  const contentChunks = chunkString(noEmojiContent, 5000);
   const record = { title, slug, content };
   const recordChunks = contentChunks.reduce((recordChunksTotal, contentChunksItem, idx) => {
-    return [...recordChunksTotal, { ...record, ...{ content: contentChunksItem } }];
+    return [
+      ...recordChunksTotal,
+      { ...record, ...{ content: contentChunksItem }, objectID: `${slug}${idx}` }
+    ];
   }, []);
 
   return [...chunksTotal, ...recordChunks];
