@@ -1,18 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  FacebookShareCount,
-  GooglePlusShareCount,
-  LinkedinShareCount,
-  FacebookIcon,
-  TwitterIcon,
-  GooglePlusIcon,
-  LinkedinIcon
-} from "react-share";
+import { ShareButtonRectangle, ShareBlockStandard } from "react-custom-share";
+import FaTwitter from "react-icons/lib/fa/twitter";
+import FaFacebook from "react-icons/lib/fa/facebook";
+import FaGooglePlus from "react-icons/lib/fa/google-plus";
+import FaLinkedin from "react-icons/lib/fa/linkedin";
 
 import config from "../../../content/meta/config";
 
@@ -28,59 +20,25 @@ const PostShare = props => {
 
   const url = config.siteUrl + config.pathPrefix + slug;
 
-  const iconSize = 36;
-  const filter = count => (count > 0 ? count : "");
+  const shareBlockProps = {
+    url: url,
+    button: ShareButtonRectangle,
+    buttons: [
+      { network: "Twitter", icon: FaTwitter },
+      { network: "Facebook", icon: FaFacebook },
+      { network: "GooglePlus", icon: FaGooglePlus },
+      { network: "Linkedin", icon: FaLinkedin }
+    ],
+    text: title,
+    longtext: excerpt
+  };
 
   return (
     <React.Fragment>
       <div className="share">
         <span className="label">SHARE</span>
         <div className="links">
-          <TwitterShareButton
-            url={url}
-            title={title}
-            additionalProps={{
-              "aria-label": "Twitter share"
-            }}
-          >
-            <TwitterIcon round size={iconSize} />
-          </TwitterShareButton>
-          <GooglePlusShareButton
-            url={url}
-            additionalProps={{
-              "aria-label": "Google share"
-            }}
-          >
-            <GooglePlusIcon round size={iconSize} />
-            <GooglePlusShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
-            </GooglePlusShareCount>
-          </GooglePlusShareButton>
-          <FacebookShareButton
-            url={url}
-            quote={`${title} - ${excerpt}`}
-            additionalProps={{
-              "aria-label": "Facebook share"
-            }}
-          >
-            <FacebookIcon round size={iconSize} />
-            <FacebookShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
-            </FacebookShareCount>
-          </FacebookShareButton>
-          <LinkedinShareButton
-            url={url}
-            title={title}
-            description={excerpt}
-            additionalProps={{
-              "aria-label": "LinkedIn share"
-            }}
-          >
-            <LinkedinIcon round size={iconSize} />
-            <LinkedinShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
-            </LinkedinShareCount>
-          </LinkedinShareButton>
+          <ShareBlockStandard {...shareBlockProps} />
         </div>
       </div>
 
@@ -88,33 +46,36 @@ const PostShare = props => {
       <style jsx>{`
         .share {
           display: flex;
-          flex-direction: column;
-          justify-content: center;
+          flex-direction: row;
           align-items: center;
         }
 
         .links {
           display: flex;
           flex-direction: row;
+          flex-grow: 1;
+          width: 100%;
 
-          :global(.SocialMediaShareButton) {
-            margin: 0 0.8em;
-            cursor: pointer;
+          :global(> div) {
+            width: 100%;
           }
         }
 
         .label {
+          background: #ddd;
+          color: #fff;
           font-size: 1.2em;
-          margin: 0 1em 1em;
+          flex-grow: 0;
+          display: flex;
+          height: 44px;
+          flex-basis: 100px;
+          justify-content: center;
+          align-items: center;
         }
 
         @from-width tablet {
           .share {
-            flex-direction: row;
-            margin: ${theme.space.inset.l};
-          }
-          .label {
-            margin: ${theme.space.inline.m};
+            margin: ${theme.space.inset.l} 0;
           }
         }
       `}</style>
