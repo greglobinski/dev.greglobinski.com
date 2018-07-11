@@ -1,5 +1,5 @@
 ---
-title: How to add custom social sharing buttons to GatsbyJS blog 1/3
+title: How to add custom social sharing buttons to a GatsbyJS blog's home page
 category: tutorial
 cover: custom-social-share-buttons-gatsby.png
 ---
@@ -235,7 +235,7 @@ export const pageQuery = graphql`
 
 ## Customize it
 
-That's only a first step. The title of this blog post is **How to add custom social share buttons to GatsbyJS blog**, but these ones you have just added are using a `react-custom-share` built-in button theme.
+That's only a first step. In the title of this blog post is **custom social share buttons**, but these ones you have just added are using a `react-custom-share` built-in button theme.
 
 But you have not to stay with a built-in theme. You can override any of the built-in theme's style and get the look you want.
 
@@ -287,3 +287,9 @@ Congratulations! You have just met the first target of the series. In the follow
 * How to create a custom share button from scratch.
 * How to do it without the `emotion` library. Maybe you are using `styled-components` in your projects or just prefer to use plain CSS.
 * How the `react-custom-share` works, what exactly the script does and how.
+
+### This post is a part of a series
+
+* How to add custom social sharing buttons to a GatsbyJS blog's home page
+* [How to add custom social sharing buttons to GatsbyJS blog's posts](../custom-social-share-buttons-gatsby-2)
+* Coming soon...
