@@ -3,7 +3,6 @@ module.exports = {
   shortSiteTitle: "front-end dev with Greg", // <title> ending for posts and pages
   siteDescription: "Front-end web development with Greg is an educational project.",
   siteUrl: "https://dev.greglobinski.com",
-  pathPrefix: "/",
   siteImage: "preview.png",
   siteLanguage: "en",
   // author

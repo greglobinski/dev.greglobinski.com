@@ -11,7 +11,7 @@ const Seo = props => {
         description,
         cover: { childImageSharp: { resize: { src: cover } = {} } = {} } = {}
       } = {},
-      fields: { slug } = {}
+      fields: { slug = "" } = {}
     } = {},
     facebook
   } = props;
@@ -21,7 +21,7 @@ const Seo = props => {
   const seoImage = cover ? `${config.siteUrl}${cover}` : `${config.siteUrl}/${config.siteImage}`;
   const seoImageWidth = cover ? 800 : 1200;
   const seoImageHeight = cover ? 360 : 630;
-  const seoUrl = config.siteUrl + config.pathPrefix + slug;
+  const seoUrl = config.siteUrl + slug;
 
   return (
     <Helmet

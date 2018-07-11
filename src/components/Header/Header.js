@@ -71,7 +71,7 @@ class Header extends React.Component {
             :global(a.logoType) {
               align-items: center;
               display: flex;
-              flex-direction: "column";
+              flex-direction: column;
               color: ${theme.text.color.primary};
 
               .logo {

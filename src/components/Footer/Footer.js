@@ -11,19 +11,19 @@ const Footer = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .footer {
-          background: ${theme.color.neutral.white});
+          background: ${theme.color.neutral.white};
           padding: ${theme.space.inset.default};
           padding-top: 0;
           padding-bottom: 120px;
 
-          :global(ul) {
+          & :global(ul) {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             list-style: none;
             padding: 0;
 
-            :global(li) {
+            & :global(li) {
               color: ${theme.color.neutral.gray.i};
               font-size: ${theme.font.size.xxs};
               padding: ${theme.space.xxs} ${theme.space.s};

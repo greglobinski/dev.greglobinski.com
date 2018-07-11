@@ -95,7 +95,7 @@ const Hero = props => {
 
           &:focus {
             outline-style: none;
-            background: ${theme.color.brand.primary.active};
+            background: ${theme.color.brand.primaryActive};
           }
 
           :global(svg) {

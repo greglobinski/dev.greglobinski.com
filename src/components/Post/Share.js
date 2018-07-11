@@ -18,7 +18,7 @@ const PostShare = props => {
     theme
   } = props;
 
-  const url = config.siteUrl + config.pathPrefix + slug;
+  const url = config.siteUrl + slug;
 
   const shareBlockProps = {
     url: url,
