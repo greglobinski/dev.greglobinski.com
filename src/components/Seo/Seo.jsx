@@ -18,7 +18,7 @@ const Seo = props => {
 
   const seoTitle = title ? `${title} - ${config.shortSiteTitle}` : config.siteTitle;
   const seoDescription = description ? description : config.siteDescription;
-  const seoImage = cover ? cover : config.siteImage;
+  const seoImage = cover ? `${config.siteUrl}${cover}` : `${config.siteUrl}/${config.siteImage}`;
   const seoImageWidth = cover ? 800 : 1200;
   const seoImageHeight = cover ? 360 : 630;
   const seoUrl = config.siteUrl + config.pathPrefix + slug;
