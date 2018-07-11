@@ -58,6 +58,7 @@ const Bodytext = props => {
           :global(li) {
             margin: 0.7em 0;
             line-height: 1.5;
+            font-size: ${theme.font.size.s};
           }
 
           :global(a):not(.ant-btn) {
