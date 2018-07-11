@@ -1,5 +1,5 @@
 ---
-title: How to add custom social share buttons to GatsbyJS blog
+title: How to add custom social sharing buttons to GatsbyJS blog 1/3
 category: tutorial
 cover: custom-social-share-buttons-gatsby.png
 ---
@@ -287,5 +287,3 @@ Congratulations! You have just met the first target of the series. In the follow
 * How to create a custom share button from scratch.
 * How to do it without the `emotion` library. Maybe you are using `styled-components` in your projects or just prefer to use plain CSS.
 * How the `react-custom-share` works, what exactly the script does and how.
-
-You will learn a lot, so stay tuned. Follow me on [twitter](https://twitter.com/@greglobinski) or [medium](https://medium.com/@greglobinski) to be informed about following parts of the series.
