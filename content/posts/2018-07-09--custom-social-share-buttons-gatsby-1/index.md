@@ -1,5 +1,5 @@
 ---
-title: How to add custom social sharing buttons to a GatsbyJS blog's home page
+title: Add custom social sharing buttons to a GatsbyJS blog's home page
 category: tutorial
 cover: custom-social-share-buttons-gatsby.png
 ---
@@ -179,7 +179,7 @@ class BlogIndex extends React.Component {
       ],
       text: `Give it a try - mywebsite.com `,
       longtext: `Take a look at this super website I have just found.`,
-      buttonCustomClassName: customStyles
+      buttonClassName: customStyles
     };
 
     return (
@@ -290,6 +290,6 @@ Congratulations! You have just met the first target of the series. In the follow
 
 ### This post is a part of a series
 
-* How to add custom social sharing buttons to a GatsbyJS blog's home page
-* [How to add custom social sharing buttons to GatsbyJS blog's posts](../custom-social-share-buttons-gatsby-2)
+* Add custom social sharing buttons to a GatsbyJS blog's home page
+* [Add custom social sharing buttons to GatsbyJS blog's posts](../custom-social-share-buttons-gatsby-2)
 * Coming soon...

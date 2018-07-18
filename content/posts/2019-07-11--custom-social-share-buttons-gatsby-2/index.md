@@ -1,5 +1,5 @@
 ---
-title: How to add custom social sharing buttons to GatsbyJS blog's posts
+title: Add custom social sharing buttons to GatsbyJS blog's posts
 category: tutorial
 cover: custom-social-share-buttons-gatsby.png
 ---
@@ -61,7 +61,7 @@ const CustomReactShare = props => {
     ],
     text: `Give it a try - mywebsite.com `,
     longtext: `Take a look at this super website I have just found.`,
-    buttonCustomClassName: customStyles
+    buttonClassName: customStyles
   };
 
   return <ShareBlockStandard {...shareBlockProps} />;
@@ -225,6 +225,6 @@ We are at halfway point of the series. In the next episode you will learn how to
 
 ### This post is a part of a series
 
-* [How to add custom social sharing buttons to a GatsbyJS blog's home page](../custom-social-share-buttons-gatsby-1)
-* How to add custom social sharing buttons to GatsbyJS blog's posts
+* [Add custom social sharing buttons to a GatsbyJS blog's home page](../custom-social-share-buttons-gatsby-1)
+* Add custom social sharing buttons to GatsbyJS blog's posts
 * Coming soon...
