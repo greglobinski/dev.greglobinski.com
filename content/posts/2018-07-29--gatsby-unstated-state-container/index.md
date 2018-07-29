@@ -12,7 +12,7 @@ If you already know what it is, you probably also know that the major upgrade is
 
 Because of that, a couple days ago I decided to familiarize myself with the upcoming changes.
 
-One thing came to light. 
+One thing came to light.
 
 ## Layout component
 
@@ -20,15 +20,15 @@ In the **version 1** there are `Layout` type components. If you have only one su
 
 The component is an ideal place to store a central state of the application.
 
-Regretably with the new architecture of the **version 2** it does not work. Now `Layouts` are ordinary components. In v2 they are placed inside `Page` components not outside them. You can't store the central app state there, because every time you switch to a new page the Layout component is mounted. 
+Regretably with the new architecture of the **version 2** it does not work. Now `Layouts` are ordinary components. In v2 they are placed inside `Page` components not outside them. You can't store the central app state there, because every time you switch to a new page the Layout component is mounted.
 
 The problem is already [noticed](https://github.com/gatsbyjs/gatsby/issues/6127) and I believe that soon there will be workaround for it.
 
 ## State container
 
-But till that I needed a new container for the state of my app. I could use [react-redux](https://github.com/reduxjs/react-redux), GatsbyJS [works](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-redux) nicely with it. But I decided to look for something new. 
+But till that I needed a new container for the state of my app. I could use [react-redux](https://github.com/reduxjs/react-redux), GatsbyJS [works](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-redux) nicely with it. But I decided to look for something new.
 
-After all, I was just playing with the new GatsbyJS, it was a good ocasion to explore the new land even further. 
+After all, I was just playing with the new GatsbyJS, it was a good ocasion to explore the new land even further.
 
 This way I came across [Unstated](https://github.com/jamiebuilds/unstated).
 
@@ -36,16 +36,15 @@ This way I came across [Unstated](https://github.com/jamiebuilds/unstated).
 
 Unstated is a state container created by [@jamiebuilds](https://twitter.com/jamiebuilds).
 
-[Ken Wheeler](https://twitter.com/ken_wheeler) said about the library: 
+[Ken Wheeler](https://twitter.com/ken_wheeler) said about the library:
 
 > "When people say you don't need Redux most of the time, they actually mean you do need Unstated. It's like setState on fucking horse steroids"
 
-
 ## GatsbyJS and Unstated together
 
-Let's write some code. 
+Let's write some code.
 
-**Note**. Whenever I use `yarn`, you can use `npm` with coresponding commands, if you prefer. 
+**Note**. Whenever I use `yarn`, you can use `npm` with coresponding commands, if you prefer.
 
 I assume that you already have a **Gatsby CLI** installed globaly, so you are able to create a GatsbyJS website with the `gatsby new` command. If not, read [this](https://next.gatsbyjs.org/tutorial/part-one/) first.
 
@@ -69,26 +68,26 @@ yarn add unstated
 
 ### Container
 
-First we have to build a container for our state. Create a file `CounterContainer.js` inside the `src/state/` folder. With code like below. 
+First we have to build a container for our state. Create a file `CounterContainer.js` inside the `src/state/` folder. With code like below.
 
 ```javascript
-import { Container } from "unstated"
+import { Container } from "unstated";
 
-class CounterContainer extends Container<CounterState> {
+class CounterContainer extends Container {
   state = {
     count: 0
   };
 
   increment() {
-    this.setState({ count: this.state.count + 1 })
+    this.setState({ count: this.state.count + 1 });
   }
 
   decrement() {
-    this.setState({ count: this.state.count - 1 })
+    this.setState({ count: this.state.count - 1 });
   }
 }
 
-export default CounterContainer
+export default CounterContainer;
 ```
 
 What is it similar to? It looks like a regular React class component, doesn't it? But it's not.
@@ -106,49 +105,43 @@ One is `replaceRenderer` which runs during Gatsby's server rendering process.
 Edit `gatsby-ssr.js`.
 
 ```javascript
-import React from 'react'
-import { Provider } from 'unstated'
-import { renderToString } from 'react-dom/server'
+import React from "react";
+import { Provider } from "unstated";
+import { renderToString } from "react-dom/server";
 
 export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
-
-  const ConnectedBody = () => (
-    <Provider>
-      {bodyComponent}
-    </Provider>
-  )
-  replaceBodyHTMLString(renderToString(<ConnectedBody/>))
-}
+  const ConnectedBody = () => <Provider>{bodyComponent}</Provider>;
+  replaceBodyHTMLString(renderToString(<ConnectedBody />));
+};
 ```
 
 The second one is `replaceRouterComponent` which is a part of Gatsby's browser APIs. Edit `gatsby-browser.js`.
 
 ```javascript
-import React from 'react'
-import { Router } from 'react-router-dom'
-import { Provider } from 'unstated'
+import React from "react";
+import { Router } from "react-router-dom";
+import { Provider } from "unstated";
 
 export const replaceRouterComponent = ({ history }) => {
-
   const ConnectedRouterWrapper = ({ children }) => (
     <Provider>
       <Router history={history}>{children}</Router>
     </Provider>
-  ) 
+  );
 
-  return ConnectedRouterWrapper
-}
+  return ConnectedRouterWrapper;
+};
 ```
 
 ### Subscribe
 
-The last step is to subscribe to the state. 
+The last step is to subscribe to the state.
 
 Open `src/components/layout.js` file and add two import statements to it.
 
 ```javascript
-import { Subscribe } from 'unstated'
-import CounterContainer from '../state/CounterContainer'
+import { Subscribe } from "unstated";
+import CounterContainer from "../state/CounterContainer";
 ```
 
 And a little interface to manage and observe the current value of the state.
@@ -172,12 +165,3 @@ You should see something like this.
 The value of **Count:** should stay unchanged when you switch between pages.
 
 That's it. You have now a **GatsbyJS** app with a central state managed by **Unstated**.
-
-
-
-
-
-
-
-
-
