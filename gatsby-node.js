@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+//const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const Promise = require("bluebird");
 
@@ -106,6 +106,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const posts = items.filter(item => /posts/.test(item.node.id));
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
+          const prefix = node.fields.prefix ? node.fields.prefix : ' ';
           const identifier = node.fields.identifier;
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
@@ -116,6 +117,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             context: {
               slug,
               identifier,
+              prefix,
               prev,
               next
             }
@@ -126,12 +128,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const pages = items.filter(item => /pages/.test(item.node.id));
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
+          const prefix = node.fields.prefix ? node.fields.prefix : ' ';
 
           createPage({
             path: slug,
             component: pageTemplate,
             context: {
-              slug
+              slug,
+              prefix
             }
           });
         });
@@ -144,15 +148,15 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   switch (stage) {
     case "build-javascript":
       {
-        config.plugin("BundleAnalyzerPlugin", BundleAnalyzerPlugin, [
-          {
-            analyzerMode: "static",
-            reportFilename: "./report/treemap.html",
-            openAnalyzer: true,
-            logLevel: "error",
-            defaultSizes: "gzip"
-          }
-        ]);
+        // config.plugin("BundleAnalyzerPlugin", BundleAnalyzerPlugin, [
+        //   {
+        //     analyzerMode: "static",
+        //     reportFilename: "./report/treemap.html",
+        //     openAnalyzer: true,
+        //     logLevel: "error",
+        //     defaultSizes: "gzip"
+        //   }
+        // ]);
 
         config.loader("yaml-loader", {
           test: /\.yaml$/,

@@ -223,7 +223,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { id: { regex: "//posts//" } }
+                  filter: { id: { regex: "//posts//" }, fields: { prefix: { ne: " " } } }
                 ) {
                   edges {
                     node {
@@ -280,7 +280,31 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage(filter: {
+            context: {
+              prefix: {
+                ne: " "
+              }
+            }
+          }) {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }
+      `
+      }
     },
     {
       resolve: "gatsby-plugin-svgr"
