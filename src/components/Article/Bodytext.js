@@ -92,6 +92,11 @@ const Bodytext = props => {
             padding: 0.1em 0.3em 0.2em;
             border-radius: ${theme.size.radius.tiny};
           }
+
+          :global(blockquote) {
+            padding-left: ${theme.space.m};
+            border-left: 5px solid #bbb;
+          }
         }
 
         @keyframes bodytextEntry {
