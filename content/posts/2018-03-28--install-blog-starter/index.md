@@ -213,7 +213,7 @@ ALGOLIA_INDEX_NAME=...
 FB_APP_ID=...
 ```
 
-Change `...` to real strings. Do not use quote marks. Simply put data strings after the equal signs. Like in the example below.
+Change `...` to real strings. Do not use quote marks. Put data strings after the equal signs. Like in the example below.
 
 ```bash
 GOOGLE_ANALYTICS_ID=UA-123456789-0
