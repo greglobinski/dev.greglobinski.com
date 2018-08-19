@@ -5,7 +5,7 @@ category: instruction
 cover: customize-hero-blog-starter.png
 ---
 
-The [starter](/gatsby-starter-hero-blog/) uses a `yaml` file to store the starter's theme.
+The [starter](https://github.com/greglobinski/gatsby-starter-hero-blog) uses a `yaml` file to store the starter's theme.
 
 If you are not familiar with a `yaml` type files yet, read the [What is YAML and how to use it](/what-is-yaml/) post first.
 

@@ -5,7 +5,7 @@ category: instruction
 cover: cover.png
 ---
 
-The [starter](/gatsby-starter-personal-blog/) uses a theme object so base customization is pretty easy.
+The [starter](https://github.com/greglobinski/gatsby-starter-personal-blog) uses a theme object so base customization is pretty easy.
 
 Find the `theme.js` file.
 

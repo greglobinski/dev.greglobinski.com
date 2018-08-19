@@ -5,7 +5,7 @@ category: instruction
 cover: algolia-sign-up.png
 ---
 
-As I wrote in the [Starter Instalation](/install-personal-blog-starter/) post the starter needs access data to your [Algolia](https://www.algolia.com/) account.
+As I wrote in the [Starter Instalation](/install-blog-starter/) post the starter needs access data to your [Algolia](https://www.algolia.com/) account.
 
 If you do not have an Algolia account yet you have to [sign up](https://www.algolia.com/users/sign_up) now.
 
