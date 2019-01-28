@@ -15,7 +15,7 @@ Of course you have to install the [GatsbyJS CLI](https://www.gatsbyjs.org/docs/)
 
 I do not recommend the PersonalBlog as your starting point with GatsbyJS. If you have no experience at all with GatsbyJS please go through the [official Tutorials](https://www.gatsbyjs.org/tutorial/) first.
 
-After GatsbyJS CLI finishes instalation you should be able to run `gatsby develop` command. Run the command from the inside of the newly created directory.
+After GatsbyJS CLI finishes installation you should be able to run `gatsby develop` command. Run the command from the inside of the newly created directory.
 
 ```bash
 cd [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG]
