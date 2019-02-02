@@ -19,4 +19,4 @@ So once again, it is an eductional project. For sure for me, but chances are for
 
 ### The English language
 
-One more thing, English is not my native language, so please be understanding if you find any mistake or unclear words in my writings. The code of this website is hosted on [Github](https://github.com/greglobinski/dev.greglobinski.com) so if you want to correct my English you can make a PR. Thank you.
+One more thing, I'm not a native English speaker so you may find some mistakes in my writings. Source code of this website is hosted on [Github](https://github.com/greglobinski/dev.greglobinski.com), if you want to correct something you can make a pull request. Thank you.
