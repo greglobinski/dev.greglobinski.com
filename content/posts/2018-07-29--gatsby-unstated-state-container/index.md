@@ -44,7 +44,7 @@ Unstated is a state container created by [@jamiebuilds](https://twitter.com/jami
 
 Let's write some code.
 
-**Note**. Whenever I use `yarn`, you can use `npm` with coresponding commands, if you prefer.
+**Note**. Whenever I use `yarn`, you can use `npm` with corresponding commands, if you prefer.
 
 I assume that you already have a **Gatsby CLI** installed globaly, so you are able to create a GatsbyJS website with the `gatsby new` command. If not, read [this](https://next.gatsbyjs.org/tutorial/part-one/) first.
 
