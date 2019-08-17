@@ -78,12 +78,12 @@ Go to your text editor or IDE and open the `src/pages/index.js` file and add ico
 
 ```javascript
 // import icons
-import FaTwitter from "react-icons/lib/fa/twitter";
-import FaFacebook from "react-icons/lib/fa/facebook";
-import FaGooglePlus from "react-icons/lib/fa/google-plus";
-import FaEnvelope from "react-icons/lib/fa/envelope";
-import FaPinterest from "react-icons/lib/fa/pinterest";
-import FaLinkedin from "react-icons/lib/fa/linkedin";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaGooglePlus } from "react-icons/fa-plus";
+import { FaEnvelope } from "react-icons/fa";
+import { FaPinterest } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 ```
 
 and `react-custom-share` components;
